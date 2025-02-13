@@ -3,41 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>¿Quieres ser mi San Valentín? 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #d63384;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .yes-btn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .no-btn {
+            background-color: #333;
+            color: white;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>¡Bienvenido a mi portafolio!</h1>
-        <nav>
-            <ul>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="proyectos">
-            <h2>Mis Proyectos</h2>
-            <div>
-                <article>
-                    <h3>Proyecto 1</h3>
-                    <p>Descripción breve del proyecto.</p>
-                    <a href="#">Ver más</a>
-                </article>
-            </div>
-        </section>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Puedes encontrarme en:</p>
-            <ul>
-                <li><a href="https://github.com/tuusuario">GitHub</a></li>
-                <li><a href="mailto:tuemail@gmail.com">Email</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Mi Nombre</p>
-    </footer>
+
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín? 💖</h1>
+        <div class="btn-container">
+            <button class="yes-btn" onclick="showpitoLove()">Sí 💕</button>
+            <button class="no-btn" onclick="moveNoButton()" id="noButton" >No 💔</button>
+        </div>
+        <div id="loveContent" class="hidden">
+            <h2>¡Sabía que dirías que sí mi Saúl¡ 😍</h2>
+            <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Gatito feliz">
+        </div>
+        <div id="sadContent" class="hidden">
+            <h2>¡Nooo! ¿Por qué me hiciste esto? 😭</h2>
+            <img src="gatitotriste.gif" alt="Gatito triste">
+        </div>
+    </div>
+
+    <script>
+        function showpitoLove() {
+            document.getElementById("loveContent").classList.remove("hidden");
+            document.querySelector(".btn-container").style.display = "none";
+        }
+
+        function moveNoButton() {
+            document.getElementById("sadContent").classList.remove("hidden");
+            document.querySelector(".btn-container").style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
